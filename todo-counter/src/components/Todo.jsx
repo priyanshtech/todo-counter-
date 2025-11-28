@@ -1,8 +1,46 @@
+import { useState } from "react";
+
 export default function Todo() {
-  return null;
+  const [task, setTask] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  const addTask = () => {
+    if (task.trim() === "") return;
+
+    setTodos([...todos, task]);
+    setTask("");
+  };
+
+  return (
+    <div className="bg-gray-900 text-white p-6 rounded-xl w-96 mx-auto mt-10">
+      <h2 className="text-2xl font-bold mb-4 text-center">Todo List</h2>
+
+      <div className="flex gap-2 mb-4">
+        <input
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          className="w-full px-3 py-2 rounded-lg text-black"
+          placeholder="Enter a task..."
+        />
+        <button
+          onClick={addTask}
+          className="bg-blue-600 px-4 py-2 rounded-lg"
+        >
+          Add
+        </button>
+      </div>
+
+      <ul className="space-y-2">
+  {todos.map((item, index) => (
+    <li
+      key={index}
+      className="flex justify-between bg-gray-800 px-3 py-2 rounded-lg"
+    >
+     {index+1}) {item}
+    </li>
+  ))}
+</ul>
+
+    </div>
+  );
 }
-
-
-
-
-
