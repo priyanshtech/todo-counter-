@@ -4,7 +4,13 @@ function Control({ onClick, className, children }) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg ${className}`}
+      className={`
+  px-4 py-2 rounded-lg text-xl font-bold
+  flex items-center justify-center
+  transition-transform duration-150 active:scale-75
+  ${className}
+`}
+
     >
       {children}
     </button>
@@ -20,7 +26,7 @@ export default function Counter() {
       <div className="flex justify-center gap-4">
         <Control
             onClick={() => setCount(count + 1)}
-            className="bg-green-600"
+            className="bg-green-600 "
                 >
              +
             </Control>
