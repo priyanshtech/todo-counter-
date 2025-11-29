@@ -33,7 +33,7 @@ export default function Todo() {
 
           disabled={task.trim() === ""}
           className={`px-4 py-2 rounded-lg t
-    ${task.trim() === "" ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 active:scale-75 transition-transform duration-150"}
+    ${task.trim() === "" ? "bg-blue-400 cursor-not-allowed" : "bg-blue-700 active:scale-75 transition-transform duration-150"}
   `}
         >
           Add
