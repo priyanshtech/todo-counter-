@@ -2,7 +2,7 @@ import Counter from "./components/Counter";
 import Todo from "./components/Todo";
 import ThemeToggle from "./components/ThemeToggle"; 
 import { useContext } from "react";
-import ThemeContext from "./context/ThemeContext";
+import {ThemeContext} from "./context/ThemeProvider";
 
 export default function App() {
   const { theme } = useContext(ThemeContext);

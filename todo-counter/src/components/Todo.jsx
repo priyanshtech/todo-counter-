@@ -1,5 +1,5 @@
 import { useState ,useContext} from "react";
-import ThemeContext from "../context/ThemeContext";
+import {ThemeContext} from "../context/ThemeProvider";
 
 export default function Todo() {
   const { theme } = useContext(ThemeContext);
