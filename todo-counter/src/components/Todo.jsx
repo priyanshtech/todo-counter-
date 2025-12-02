@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Todo() {
+export default function Todo({theme}) {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
   
@@ -16,7 +16,10 @@ export default function Todo() {
 
 
   return (
-    <div className="bg-gray-900 text-white p-6 rounded-xl w-96 mx-auto mt-10">
+    <div className={`p-6 rounded-xl w-80
+      ${theme === "light" ? "bg-gray-200 text-black" : "bg-gray-900 text-white"}
+      `}>
+
       <h2 className="text-2xl font-bold mb-4 text-center">Todo List</h2>
 
       <div className="flex gap-2 mb-4">
@@ -25,7 +28,7 @@ export default function Todo() {
           onChange={(e) => setTask(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter") addTask(); }}
 
-          className="w-full px-3 py-2 rounded-lg text-black"
+          className="w-full px-3 py-2 rounded-lg text-white"
           placeholder="Enter a task..."
         />
         <button

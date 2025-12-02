@@ -14,13 +14,16 @@ function Control({ onClick, className, children }) {
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default function Counter() {
+export default function Counter({theme}) {
     const [count, setCount] = useState(0);
   return (
-    <div className="bg-gray-900 text-white p-6 rounded-xl w-80">
+    <div className={`p-6 rounded-xl w-80
+      ${theme === "light" ? "bg-gray-200 text-black" : "bg-gray-900 text-white"}
+      `}>
+
       <h2 className="text-3xl font-bold mb-4 text-center">Counter</h2>
       <p className="text-center text-3xl font-semibold mb-4">{count}</p>
       <div className="flex justify-center gap-4">
