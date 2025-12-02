@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState ,useContext} from "react";
+import ThemeContext from "../context/ThemeContext";
 
-export default function Todo({theme}) {
+export default function Todo() {
+  const { theme } = useContext(ThemeContext);
+
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
   
@@ -28,7 +31,8 @@ export default function Todo({theme}) {
           onChange={(e) => setTask(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter") addTask(); }}
 
-          className="w-full px-3 py-2 rounded-lg text-white"
+          className={`w-full px-3 py-2 rounded-lg text-white${theme === "light" ? "text-black" : "text-white"}
+`}
           placeholder="Enter a task..."
         />
         <button

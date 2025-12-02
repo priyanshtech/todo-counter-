@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
+import ThemeContext from "../context/ThemeContext";
 
 function Control({ onClick, className, children }) {
   return (
@@ -17,7 +18,9 @@ function Control({ onClick, className, children }) {
   )
 }
 
-export default function Counter({theme}) {
+export default function Counter() {
+    const { theme } = useContext(ThemeContext);
+
     const [count, setCount] = useState(0);
   return (
     <div className={`p-6 rounded-xl w-80
